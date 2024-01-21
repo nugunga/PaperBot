@@ -11,10 +11,12 @@ export default function Home() {
     </main>
     <style jsx>{`
       #abc{
-        font-size: 64px;
-        color: red;
-      }
-    `}</style>
+        font-size:" 64px;
+      color: red;
+    }
+  `}  
+    </style>
     </>
+   
   );
 }
