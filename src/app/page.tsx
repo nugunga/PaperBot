@@ -9,7 +9,7 @@ export default function Home() {
      <main className={'유찬이불쌍해'}>
       <h1>꼬우세요?</h1>
       <p>
-        종태야 쿠크기믹좀 잘해봐
+        명재야 쿠크기믹좀 잘해봐
       </p>
     </main>
     <style jsx>{`
