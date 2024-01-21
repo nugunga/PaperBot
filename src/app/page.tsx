@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <main className={styles.main}>
-      <h1 id="abc">VVDDV</h1>
+      <h1 id="abc">ABC</h1>
     </main>
     <style jsx>{`
       #abc{
