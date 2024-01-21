@@ -6,15 +6,20 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <>
-    <main className={styles.main}>
-      <h1 id="abc">VVDDV</h1>
+     <main className={'유찬이불쌍해'}>
+      <h1>꼬우세요?</h1>
+      <p>
+        명재야 쿠크기믹좀 잘해봐
+      </p>
     </main>
     <style jsx>{`
       #abc{
-        font-size: 64px;
-        color: red;
-      }
-    `}</style>
+        font-size:" 64px;
+      color: red;
+    }
+  `}  
+    </style>
     </>
+   
   );
 }
