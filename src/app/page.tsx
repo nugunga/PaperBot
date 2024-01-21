@@ -10,6 +10,7 @@ export default function Home() {
       <h1>꼬우세요?</h1>
       <p>
         명재야 쿠크기믹좀 잘해봐
+        보성아 못생겼어.
       </p>
     </main>
     <style jsx>{`
