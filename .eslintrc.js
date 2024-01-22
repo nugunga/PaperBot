@@ -35,6 +35,7 @@ module.exports = {
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
+    semi: [2, "always"],
   },
   overrides: [
     {
