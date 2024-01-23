@@ -1,8 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React from "react";
+import Start from "../../discord-client"
 
 export default function Home() {
+  Start();
   return (
     <main className={styles.main}>
       <div className={styles.description}>
