@@ -1,7 +1,9 @@
 import express, { Express } from "express"
 import cors from 'cors';
 import session from 'express-session'
-import routes from "../routes/router";
+import passport from 'passport';
+import routes from "../routes";
+require('../strategies/discord');
 
 export function createApp(): Express{
     const app = express();
@@ -25,6 +27,10 @@ export function createApp(): Express{
             saveUninitialized: false,
             cookie:{ maxAge: 60000 * 60 * 24 * 7 }
     }))
+
+    //Enable Passport
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     app.use('/api', routes);
 
