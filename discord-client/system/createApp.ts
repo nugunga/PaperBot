@@ -3,7 +3,8 @@ import cors from 'cors';
 import session from 'express-session'
 import passport from 'passport';
 import routes from "../routes";
-require('../strategies/discord');
+
+require("./redirects");
 
 export function createApp(): Express{
     const app = express();
@@ -15,7 +16,7 @@ export function createApp(): Express{
     //Enable CORS
     app.use(
         cors({
-            origin: ["http://localhost:3001"],
+            origin: ["http://localhost:3000"],
             credentials: true 
         })
     )
