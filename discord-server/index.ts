@@ -12,8 +12,11 @@ export default async function main() {
   try {
     db.connect();
 
-    next();
+    const dev = process.env.NODE_ENV !== "production";
+    const hostname = "localhost";
+    const port = 3000;
 
+    const nextApp = next({ dev, hostname, port }).prepare();
     const app = createApp();
 
     app.listen(PORT, () => console.log(`Running on Port ${PORT}`));

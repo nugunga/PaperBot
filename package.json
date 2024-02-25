@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node discord-client/index.js",
+    "dev": "ts-node server",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.33.2",
     "prettier-eslint": "^16.3.0",
     "prisma": "^5.8.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

@@ -32,20 +32,16 @@ passport.use(
       done: VerifyCallback
     ) => {
       try {
-        const discordID = profile.id;
-        const existingUser = await db.user.findUnique(discordID);
+        const id = profile.id;
+        const existingUser = await db.user.findUnique(id);
 
         if (existingUser) {
-          console.log(`Existing User: ${existingUser.discordID}`);
-          await db.user.update(discordID, accessToken, refreshToken);
+          console.log(`Existing User: ${existingUser.id}`);
+          await db.user.update(id, accessToken, refreshToken);
           return done(null, existingUser);
         }
 
-        const newUser = await db.user.create(
-          discordID,
-          accessToken,
-          refreshToken
-        );
+        const newUser = await db.user.create(id, accessToken, refreshToken);
         return done(null, newUser);
       } catch (err) {
         console.log(err);
