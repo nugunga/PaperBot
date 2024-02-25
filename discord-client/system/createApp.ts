@@ -1,39 +1,40 @@
-import express, { Express } from "express"
-import cors from 'cors';
-import session from 'express-session'
-import passport from 'passport';
+import express, { Express } from "express";
+import cors from "cors";
+import session from "express-session";
+import passport from "passport";
 import routes from "../routes";
 
 require("./redirects");
 
-export function createApp(): Express{
-    const app = express();
+export function createApp(): Express {
+  const app = express();
 
-    //Enable Parsing Middleware for Requests
-    app.use(express.json());
-    app.use(express.urlencoded());
-    
-    //Enable CORS
-    app.use(
-        cors({
-            origin: ["http://localhost:3000"],
-            credentials: true 
-        })
-    )
+  //Enable Parsing Middleware for Requests
+  app.use(express.json());
+  app.use(express.urlencoded());
 
-    app.use(
-        session({
-            secret: "ASJDNKNASLNDSAJNASKJDKASHDKJhKASNLDNASND",
-            resave: false,
-            saveUninitialized: false,
-            cookie:{ maxAge: 60000 * 60 * 24 * 7 }
-    }))
+  //Enable CORS
+  app.use(
+    cors({
+      origin: ["http://localhost:3000"],
+      credentials: true,
+    })
+  );
 
-    //Enable Passport
-    app.use(passport.initialize());
-    app.use(passport.session());
+  app.use(
+    session({
+      secret: "ASJDNKNASLNDSAJNASKJDKASHDKJhKASNLDNASND",
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 * 60 * 24 * 7 },
+    })
+  );
 
-    app.use('/api', routes);
+  //Enable Passport
+  app.use(passport.initialize());
+  app.use(passport.session());
 
-    return app;
+  app.use("/api", routes);
+
+  return app;
 }
