@@ -1,3 +1,3 @@
-import discord_server from "./discord-server";
-
-discord_server();
+// import discord_server from "./discord-server";
+//
+// discord_server();

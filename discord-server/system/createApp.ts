@@ -34,7 +34,7 @@ export function createApp(): Express {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  app.use("/api", routes);
+  app.use("/api/v1/discord/", routes);
 
   return app;
 }
