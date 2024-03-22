@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.hardpaper'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation("net.dv8tion:JDA:4.4.0_350")
+	
+	// https://mvnrepository.com/artifact/org.reflections/reflections
+	implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
+	
+	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
+  	implementation 'javax.servlet:jstl:1.2'
+  	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
